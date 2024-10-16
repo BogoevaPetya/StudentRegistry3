@@ -8,17 +8,17 @@ pipeline{
         }
         stage ('Parallel execution'){
             parallel{
-            stage("Audit"){
-                steps{
-                    bat 'npm audit'
+                stage("Audit"){
+                    steps{
+                        bat 'npm audit'
+                    }
+                }
+                stage("Test"){
+                    steps{
+                        bat 'npm test'
+                    }
                 }
             }
-            stage("Test"){
-                steps{
-                    bat 'npm test'
-                }
-            }
-        }
-    }   
-}
+        }   
+    }
 }
