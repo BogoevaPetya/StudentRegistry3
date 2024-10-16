@@ -6,6 +6,7 @@ pipeline{
                 bat 'npm install'
             }
         }
+        parallel{
         stage("Audit"){
             steps{
                 bat 'npm audit'
@@ -16,5 +17,7 @@ pipeline{
                 bat 'npm test'
             }
         }
+        }
+        
     }
 }
