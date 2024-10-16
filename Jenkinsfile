@@ -22,7 +22,7 @@ pipeline{
         }
         stage("Deploy to Staging"){
             steps{
-                echo 'Deploy to staging', ok: 'Deploy'
+                input message: 'Deploy to staging', ok: 'Deploy'
             }
         }
         stage("Deploy to Production"){
